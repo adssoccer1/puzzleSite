@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <style type="text/css">
+        .nav{
+            margin: 20px;
+        }
+        .nav-link{
+            margin: 20px;
+        }
+    </style>
+    <body>
+    <div class="page-header">
+        <h1 style="margin:20px;"><a href="/">CS Problems Site</a></h1>
+    </div>
+    <nav class="nav">
+      <a class="nav-link active" href="{% url 'post_type' type='DP'%}">Dynamic Programming</a>
+      <a class="nav-link" href="{% url 'post_type' type='LinkedList'%}">Linked Lists</a>
+      <a class="nav-link" href="{% url 'post_type' type='DFS'%}">Depth First Search</a>
+      <a class="nav-link" href="{% url 'post_type' type='BFS'%}">Breadth First Search</a>
+      <a class="nav-link" href="{% url 'post_type' type='Tree'%}">Tree</a>
+      <a class="nav-link" href="{% url 'post_type' type='TwoPointer'%}">Two Pointer</a>
+      <a class="nav-link" href="{% url 'post_type' type='Array'%}">Array</a>
+      <a class="nav-link" href="{% url 'post_type' type='BackTracking'%}">Backtracking</a>
+      <a class="nav-link" href="{% url 'post_type' type='HashTable'%}">Hash Table</a>
+      <a class="nav-link" href="{% url 'post_type' type='Graph'%}">Graph</a>
+      <a class="nav-link" href="{% url 'post_type' type='Stack'%}">Stack</a>
+    </nav>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
